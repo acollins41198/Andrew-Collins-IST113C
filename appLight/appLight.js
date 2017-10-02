@@ -3,7 +3,12 @@ var state = false;
 onOff.onclick = function(){
 	if (state == false){
 		onOff.style.backgroundColor = "green";
-		onOff.style.marginLeft = '100px';
+		for (x = 0; x < 100; x++){
+			setTimeout(function(){
+				onOff.style.marginLeft = x + 'px';
+			},100);
+			
+		}
 		onOff.innerHTML = "<p><strong>On</strong></p>";
 		document.body.style.backgroundColor = "black";
 		state = true;
