@@ -1,8 +1,15 @@
 #switch {
 	height:100px;
 	width:100px;
-	margin:auto;
 	background-color:red;
+
+}
+
+#wall {
+	height:100px;
+	width:200px;
+	margin:auto;
+	background-color:grey;
 }
 
 p{

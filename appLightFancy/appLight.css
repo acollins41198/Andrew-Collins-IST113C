@@ -1,3 +1,13 @@
-body {
-	background-color:white;
+#onOff {
+	margin-left:10px;
+	height:100px;
+	width:100px;
+	background-color:red;
+	position:relative;
+}
+
+#bFrame{
+	height:100px;
+	width:220px;
+	background-color:grey;
 }
