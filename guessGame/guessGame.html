@@ -6,9 +6,17 @@
 	</head>
 	<body>
 		<h1>The Guessing Game</h1>
-		<button id="gen">Generate A Number</button>
+		<h2>The premier way to guess a number between 1 and 100</h2>
+		<button id="gen">Generate A New Number</button> <strong>OR</strong> <button id="custom" placeholder="Custom Number">Input your own:</button> <input id="cNum">
 		<div id="game">
-			YES
+			<br>
+			<input type="text" placeholder="Enter a Guess" id="guess">
+			<br>
+			<button id="sub">Submit Guess</button>
+			<br>
+			<h3>Previous Tries:</h3>
+			<br>
+			<div id="status"></div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>	
 		<script src="guessGame.js"></script>
