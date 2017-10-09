@@ -10,12 +10,15 @@
 		<button id="gen">Generate A New Number</button> <strong>OR</strong> <button id="custom" placeholder="Custom Number">Input your own:</button> <input id="cNum">
 		<div id="game">
 			<br>
-			<input type="text" placeholder="Enter a Guess" id="guess">
+			<div id="guessArea">
+				<input type="text" placeholder="Enter a Guess" id="guess">
+				<br>
+				<button id="sub">Submit Guess</button>
+			</div>
 			<br>
-			<button id="sub">Submit Guess</button>
+			<h3>Previous Tries [<span id="numGuesses">0</span>]:</h3>
 			<br>
-			<h3>Previous Tries:</h3>
-			<br>
+
 			<div id="status"></div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>	
