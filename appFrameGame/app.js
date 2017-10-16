@@ -36,11 +36,11 @@ $(function() {
 	$("#submitNumber").click(function(){
 		$("#beginGame").addClass("hidden");
 		$("#playingGame").removeClass("hidden");
-		number = $("#userNumber").val().Number();
+		number = Number("$("#userNumber").val()");
 	});
 	
 	$("#submitGuess").click(function(){
-		guess = $("#userGuess").val().Number();
+		guess = Number($("#userGuess").val());
 		tries++;
 		$("#tries").html("Tries: " + tries);
 		if (guess > number){
