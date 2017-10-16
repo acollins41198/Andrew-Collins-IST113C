@@ -1,7 +1,7 @@
 "use strict";
 
 // using a function contructor form to create an object
-function MyApp()
+function MyApp()50
 {
 	var version = "v1.0";
 
@@ -40,7 +40,7 @@ $(function() {
 	});
 	
 	$("#submitGuess").click(function(){
-		guess = $("#userGuess").val();
+		guess = $("#userGuess").val().toString();
 		tries++;
 		$("#tries").html("Tries: " + tries);
 		if (guess > number){
