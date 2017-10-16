@@ -27,6 +27,43 @@ function MyApp()
 		(part of the BOM - Browser Object Model)
 */
 $(function() {
+	var number;
+	var guess;
+	var tries = 0;
 	window.app = new MyApp();
 	window.app.start();
+	
+	$("#submitNumber").click(function(){
+		$("#beginGame").addClass("hidden");
+		$("#playingGame").removeClass("hidden");
+		number = $("#userNumber").val();
+	});
+	
+	$("#submitGuess").click(function(){
+		guess = $("#userGuess").val();
+		tries++;
+		$("#tries").html("Tries: " + tries);
+		if (guess > number){
+			$("#log").prepend("<p>" + guess + " is too high.</p>");
+		} else if (guess < number){
+			$("#log").prepend("<p>" + guess + " is too low.</p>");
+		} else if (guess == number){
+			$("#log").prepend("<p><strong>" + guess + " is correct!</strong></p>");
+			$("#submitGuess").addClass("hidden");
+			$("#restartButton").removeClass("hidden");
+		}
+	});
+	
+	$("#restartButton").click(function(){
+		number = 0;
+		tries = 0;
+		$("#tries").html("Tries: " + tries);
+		$("#submitGuess").removeClass("hidden");
+		$("#restartButton").addClass("hidden");
+		$("#beginGame").removeClass("hidden");
+		$("#playingGame").addClass("hidden");
+		$("#log").empty();
+	});
 });
+
+
