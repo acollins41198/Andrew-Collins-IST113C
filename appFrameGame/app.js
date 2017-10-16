@@ -1,7 +1,7 @@
 "use strict";
 
 // using a function contructor form to create an object
-function MyApp()50
+function MyApp()
 {
 	var version = "v1.0";
 
