@@ -40,7 +40,7 @@ $(function() {
 	});
 	
 	$("#submitGuess").click(function(){
-		guess = $("#userGuess").val().toString();
+		guess = $("#userGuess").val().Number();
 		tries++;
 		$("#tries").html("Tries: " + tries);
 		if (guess > number){
