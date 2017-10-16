@@ -36,7 +36,7 @@ $(function() {
 	$("#submitNumber").click(function(){
 		$("#beginGame").addClass("hidden");
 		$("#playingGame").removeClass("hidden");
-		number = Number("$("#userNumber").val()");
+		number = Number($("#userNumber").val());
 	});
 	
 	$("#submitGuess").click(function(){
