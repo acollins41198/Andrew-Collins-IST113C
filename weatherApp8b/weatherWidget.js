@@ -31,4 +31,15 @@ function WeatherWidget($widget){
             $(".results", $widget).fadeIn();
         });
     }
+    
+    this.getLocation = function(){
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function(position){
+                $("#latitude").val(position.coords.latitude);
+                $("#longitude").val(position.coords.longitude);
+            }, function(error){
+                 $(".error").text("ERROR: " + error.message).slideDown();
+            });
+        }
+    };
 }

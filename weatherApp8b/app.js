@@ -24,6 +24,7 @@ function MyApp()
 	$("#getWeather").click(function(){
 		console.log("Yes?");
 		wWidget.update();
+		wWidget.getLocation();
 	});
 	
 
