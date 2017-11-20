@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Deck Pricer</title>
+        <link href="style.css" rel="stylesheet">
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <header>Andrew's Magic Deck Pricer</header>
+        <br><br>
+        <div id="main">
+            <div id="newCard">
+                <label for="nameInput">Search by Card Name: </label>
+                <input id="nameInput" type="text">
+                <strong><br>OR<br></strong>
+                <label for="idInput" class="tooltip">Search by Multiverse ID: <span class="tooltiptext">Multiverse ID is found by looking at the URL in Gatherer, and can be useful when you have trouble searching by card name</span></label>
+                <input id="idInput" type="number">
+                <br><br>
+                <button id="searchCard">Add</button><br><br>
+            </div>
+            <div id="tempCardDisplay">
+                <div id="tempName"></div>
+                <div id="tempPrice"></div>
+                <img id="tempImage" src="" height="350" width="250">
+            </div>
+            <div id="deckArea">
+                <strong>Creatures:</strong><br>
+                <ul class="cardList" id="creatures">
+                    
+                </ul>
+                <strong>Spells:</strong><br>
+                <ul class="cardList" id="spells">
+
+                </ul>
+                <strong>Lands:</strong><br>
+                <ul class="cardList" id="lands">
+
+                </ul>
+            </div>
+        </div>
+        <div id="template" class="hidden">
+            <ul id="card-template">
+                <li class="card">
+                    <span class="card-name tooltip">
+                        <span class="tooltiptext"></span>
+                    </span>
+                    <span class="card-mana"></span>
+                    <button class="remove">X</button>
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script src="fetcher.js"></script>
+    <script src="script.js"></script>
+</html>
