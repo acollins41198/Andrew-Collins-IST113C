@@ -4,6 +4,19 @@ body {
     font-family: Verdana,Geneva,sans-serif;
 }
 
+button {
+    border-radius:4px;
+    background-color:grey;
+    border-color:white;
+    padding:5px 10px 5px 10px;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.floater{
+    float:left;
+}
+
 .tooltip {
     position: relative;
     display: inline-block;
@@ -29,9 +42,22 @@ body {
 }
 
 .cardList{
-    list-style:none;
+    border-spacing: 5px;
+    text-align: left;
 }
 
+th, td {
+    padding: 5px;
+}
 .hidden{
     visibility:hidden;
+}
+
+#searchArea{
+    float:left;
+    border: 1px solid white;
+}
+#deckArea{
+    border: 1px solid white;
+    float:left;
 }

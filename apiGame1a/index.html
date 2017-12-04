@@ -5,53 +5,81 @@
         <link href="style.css" rel="stylesheet">
         <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        
+        <link href="css/mana.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <header>Andrew's Magic Deck Pricer</header>
         <br><br>
         <div id="main">
-            <div id="newCard">
-                <label for="nameInput">Search by Card Name: </label>
-                <input id="nameInput" type="text">
-                <strong><br>OR<br></strong>
-                <label for="idInput" class="tooltip">Search by Multiverse ID: <span class="tooltiptext">Multiverse ID is found by looking at the URL in Gatherer, and can be useful when you have trouble searching by card name</span></label>
-                <input id="idInput" type="number">
-                <br><br>
-                <button id="searchCard">Add</button><br><br>
-            </div>
-            <div id="tempCardDisplay">
-                <div id="tempName"></div>
-                <div id="tempPrice"></div>
-                <img id="tempImage" src="" height="350" width="250">
+            <div id="searchArea">
+                <div id="newCard">
+                    <label for="nameInput">Search by Card Name: </label>
+                    <input id="nameInput" type="text">
+                    <strong><br>OR<br></strong>
+                    <label for="idInput" class="tooltip">Search by Multiverse ID: <span class="tooltiptext">Multiverse ID is found by looking at the URL in Gatherer, and can be useful when you have trouble searching by card name</span></label>
+                    <input id="idInput" type="number">
+                    <br><br>
+                    <button id="searchCard">Search</button><br><br>
+                </div>
+                <div id="tempCardDisplay">
+                    <div id="tempName"></div>
+                    <div id="tempPrice"></div>
+                    <img id="tempImage" src="https://mtg.gamepedia.com/media/mtg.gamepedia.com/f/f8/Magic_card_back.jpg?version=4694fa6f8c95cfc758855c8ed4c4d0c0" height="350" width="250">
+                </div>
+                <input type="number" id="addQuantity" value="1" min="1" max="4"><button id="addCard">Add Card</button>
             </div>
             <div id="deckArea">
-                <strong>Creatures:</strong><br>
-                <ul class="cardList" id="creatures">
-                    
-                </ul>
-                <strong>Spells:</strong><br>
-                <ul class="cardList" id="spells">
-
-                </ul>
-                <strong>Lands:</strong><br>
-                <ul class="cardList" id="lands">
-
-                </ul>
+                <table id="total">
+                    <tr><th><button id="exportFile">Export Decklist</button></th></tr>
+                    <tr><th><strong>Total:</strong></th><th>$<span id="totalValue"></th></tr>
+                    <tr><th><strong>Number of cards: </strong></th><th><span id="totalCards"></span></th></tr>
+                </table>
+                <div class="floater" id="leftCards">
+                    <strong>Creatures:</strong><br>
+                    <table class="cardList" id="typeCreature">
+                        
+                    </table>
+                    <strong>Artifacts:</strong><br>
+                    <table class="cardList" id="typeArtifact">
+    
+                    </table>
+                    <strong>Enchantments:</strong><br>
+                    <table class="cardList" id="typeEnchantment">
+    
+                    </table>
+                    <strong>Planeswalkers:</strong><br>
+                    <table class="cardList" id="typePlaneswalker">
+    
+                    </table>
+                </div>
+                <div class="floater" id="rightCards">
+                    <strong>Spells:</strong><br>
+                    <table class="cardList" id="typeSpell">
+    
+                    </table>
+                    <strong>Lands:</strong><br>
+                    <table class="cardList" id="typeLand">
+    
+                    </table>
+                </div>
             </div>
         </div>
-        <div id="template" class="hidden">
-            <ul id="card-template">
-                <li class="card">
-                    <span class="card-name tooltip">
+        <div id="templates" class="hidden">
+            <table  id="card-template">
+                <tr class="card">
+                    <th><button class="remove">X</button></th>
+                    <th><span class="card-quantity"></span></th>
+                    <th><span class="card-name tooltip">
                         <span class="tooltiptext"></span>
-                    </span>
-                    <span class="card-mana"></span>
-                    <button class="remove">X</button>
-                </li>
-            </ul>
+                    </span></th>
+                    <th><span class="card-mana"></span></th>
+                    <th><span class="card-price"></span></th>
+                    <th><span class="total-price" data-bind="text: "></span></th>
+                    <th><span class="cardkey hidden"></span></th>
+                </tr>
+            </table>
         </div>
     </body>
-    <script src="fetcher.js"></script>
     <script src="script.js"></script>
+    <script>ko.applyBindings(new cardViewModel);</script>
 </html>
